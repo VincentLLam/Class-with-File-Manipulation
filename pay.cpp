@@ -1,37 +1,32 @@
 #include "person.cpp"
 #include <fstream>
 
-void readData(int SIZE, Person employee[]);
-void writeData(int SIZE, Person employee[]);
+int readData(int SIZE, Person employee[]);
+void writeData(int num, Person employee[]);
 
 int main()
 {
   int SIZE = 20;
+  int num = 0;
   Person employee[SIZE];
 
-  readData(SIZE, employee);
-  writeData(SIZE, employee);
+  num = readData(SIZE, employee);
+  writeData(num, employee);
 
   return 0;
 }
 
-void readData(int SIZE, Person employee[])
+int readData(int SIZE, Person employee[])
 {
   ifstream inFile;
-  string fName;
-  string lName;
-  float rate;
-  float hours;
-  string temp;
+  string fName, lName, temp;
+  float rate, hours;
   int i = 0;
   inFile.open("input.txt");
 
   while(!inFile.eof())
   {
-    inFile >> fName;
-    inFile >> lName;
-    inFile >> rate;
-    inFile >> hours;
+    inFile >> fName >> lName >> rate >> hours;
     getline(inFile, temp);
     employee[i].setFirstName(fName);
     employee[i].setLastName(lName);
@@ -39,15 +34,18 @@ void readData(int SIZE, Person employee[])
     employee[i].setHoursWorked(hours);
     i++;
   }
+  i--;
+
   inFile.close();
+  return i;
 }
 
-void writeData(int SIZE, Person employee[])
+void writeData(int num, Person employee[])
 {
   ofstream outFile;
   outFile.open("output.txt");
 
-  for(int i = 0; i < SIZE; i++)
+  for(int i = 0; i < num; i++)
   {
     outFile << employee[i].fullName() << " " << employee[i].totalPay() << endl;
   }
