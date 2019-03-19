@@ -1,6 +1,6 @@
 #ifndef PERSON_H
 #define PERSON_H
-
+#include <iostream>
 #include <string>
 using namespace std;
 class Person
@@ -11,7 +11,7 @@ private:
     float  payRate;
     float  hoursWorked;
 public:
-    Person();
+    Person(string firstName, string lastName, float payRate, float hoursWorked);
     void setLastName(string lName);
     string getLastName();
     void setFirstName(string fName);

@@ -1,8 +1,8 @@
 #include "person.h"
-Person::Person()
+Person::Person(string firstName, string lastName, float payRate, float hoursWorked)
 {
-  lastName = "";
   firstName = "";
+  lastName = "";
   payRate = 0;
   hoursWorked = 0;
 }
