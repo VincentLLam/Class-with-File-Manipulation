@@ -1,3 +1,5 @@
+// Vincent Lam
+// Section Number 3
 #ifndef PERSON_H
 #define PERSON_H
 #include <iostream>

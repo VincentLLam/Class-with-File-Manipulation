@@ -1,3 +1,5 @@
+// Vincent Lam
+// Section Number 3
 #include "person.h"
 Person::Person(string firstName, string lastName, float payRate, float hoursWorked)
 {

@@ -1,3 +1,5 @@
+// Vincent Lam
+// Section Number 3
 #include "person.cpp"
 #include <fstream>
 #include <vector>
@@ -48,7 +50,7 @@ void writeData(vector<Person> &employees)
 
   for(int i = 0; i < employees.size(); i++)
   {
-    outFile << setw(20) << left << employees.at(i).fullName() << "$" << setw(10) << left 
+    outFile << setw(20) << left << employees.at(i).fullName() << "$" << setw(10) << left
       << fixed << setprecision(2) << employees.at(i).totalPay() << endl;
   }
   outFile.close();
